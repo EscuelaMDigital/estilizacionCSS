@@ -1,0 +1,262 @@
+/* ==========================================================
+   CAFÉ MURAL — Hoja de estilos
+   Ejercicio: Estilización de Contenido HTML
+   ==========================================================
+
+   ÍNDICE
+   1. Reset básico y estilos globales
+   2. Header con gradiente lineal y tipografía de títulos
+   3. Barra de navegación con estilos de enlace y :hover
+   4. Sección "Nuestra historia" — tipografía y fondo
+   5. Sección "Especialidades" — gradiente radial
+   6. Footer con fondo oscuro y texto claro
+   ========================================================== */
+
+
+/* ==========================================================
+   1. RESET BÁSICO Y ESTILOS GLOBALES
+   ========================================================== */
+
+/* Eliminamos el margin y padding por defecto de todos
+   los elementos para partir de una base limpia */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos base del documento:
+   - Lato como fuente principal para el cuerpo de texto
+   - Color de texto oscuro pero no negro puro
+   - Fondo general en crema muy claro */
+body {
+    font-family: 'Lato', Arial, sans-serif;
+    font-size: 1rem;
+    color: #3a2e28;
+    background-color: #fdf8f3;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Nos aseguramos que el main ocupe todo el espacio disponible que
+   no necesitan el header o footer */
+main {
+    flex: 1;
+}
+
+/* Estilos base para todos los títulos:
+   usamos Playfair Display, la fuente serif de títulos */
+h1, h2, h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Eliminamos el subrayado por defecto de todos los enlaces */
+a {
+    text-decoration: none;
+}
+
+
+/* ==========================================================
+   2. HEADER — Gradiente lineal y tipografía estilizada
+   ========================================================== */
+
+.header {
+    /* Gradiente lineal de arriba hacia abajo.
+       Van de un terracota medio a un marrón oscuro,
+       evocando la calidez de una cafetería. */
+    background: linear-gradient(
+        to bottom,
+        #c1694f,
+        #7a3b2e
+    );
+
+    /* Padding generoso para que el contenido respire */
+    padding: 5rem 2rem;
+
+    /* Alineamos el texto al centro */
+    text-align: center;
+}
+
+.header-titulo {
+    /* Playfair Display ya se aplica por herencia desde h1,
+       pero lo reforzamos aquí con propiedades adicionales */
+    font-size: 4rem;
+    font-weight: 700;
+    color: #fdf3e7;             /* Crema cálido, contrasta con el fondo oscuro */
+    letter-spacing: 6px;        /* Separamos las letras para un efecto elegante */
+    text-transform: uppercase;  /* Todo en mayúsculas refuerza el carácter de marca */
+    margin-bottom: 1rem;
+}
+
+.header-eslogan {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.2rem;
+    font-style: italic;          /* Cursiva para el eslogan */
+    font-weight: 400;
+    color: #f0c8a8;              /* Tono melocotón claro, diferente al blanco del título */
+    letter-spacing: 1px;
+}
+
+
+/* ==========================================================
+   3. BARRA DE NAVEGACIÓN — Color, enlaces y :hover
+   ========================================================== */
+
+.nav {
+    background-color: #3a2e28;  /* Marrón muy oscuro, casi negro */
+    padding: 0 2rem;
+
+    /* Los enlaces del nav son elementos inline por defecto.
+       Sin Flexbox ni Grid, los dejamos fluir en línea
+       con display: inline-block y separación mediante padding */
+}
+
+/* Estilizamos directamente los <a> dentro del nav */
+.nav a {
+    display: inline-block;       /* Para que el padding vertical funcione */
+    color: #f0c8a8;              /* Melocotón claro, coherente con el eslogan */
+    font-family: 'Lato', Arial, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;       /* Sin subrayado en estado normal */
+    padding: 1rem 1.5rem;        /* Área de clic generosa */
+    /* Transición suave para el cambio de color al hacer hover */
+    transition: color 0.2s ease;
+}
+
+/* Estado :hover — el enlace cambia de color al pasar el ratón */
+.nav a:hover {
+    color: #ffffff;              /* Blanco puro al hacer hover */
+    text-decoration: underline;  /* Aparece el subrayado solo en hover */
+}
+
+
+/* ==========================================================
+   4. SECCIÓN "NUESTRA HISTORIA" — Tipografía y fondo
+   ========================================================== */
+
+.seccion-historia {
+    background-color: #fff9f3;  /* Fondo blanco con un tono cálido muy sutil */
+    padding: 4rem 3rem;
+    max-width: 820px;           /* Limitamos el ancho de línea para legibilidad */
+    margin: 0 auto;             /* Centramos el bloque horizontalmente */
+}
+
+.seccion-historia h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #7a3b2e;             /* Marrón terracota para el título de sección */
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #c1694f;  /* Línea decorativa bajo el título */
+    padding-bottom: 0.5rem;
+}
+
+.seccion-historia p {
+    font-size: 1rem;
+    font-weight: 300;           /* Peso ligero para el texto de lectura larga */
+    line-height: 1.8;           /* Interlineado amplio para facilitar la lectura */
+    color: #4a3c35;             /* Gris oscuro cálido, no negro puro */
+    margin-bottom: 1.2rem;
+    text-align: justify;        /* Justificado para un aspecto más editorial */
+}
+
+/* Eliminamos el margen inferior del último párrafo
+   para que no haya espacio extra al final de la sección */
+.seccion-historia p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ==========================================================
+   5. SECCIÓN "ESPECIALIDADES" — Gradiente radial
+   ========================================================== */
+
+.seccion-especialidades {
+    /* Gradiente radial que simula un foco de luz central:
+       el centro es crema claro y los bordes son más oscuros,
+       dando sensación de profundidad sin imágenes externas */
+    background: radial-gradient(
+        ellipse at center,
+        #fdf3e7 0%,
+        #e8d5bc 40%,
+        #c8a882 100%
+    );
+
+    padding: 4rem 3rem;
+    max-width: 820px;
+    margin: 0 auto;
+}
+
+.seccion-especialidades h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #7a3b2e;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Contenedor de cada especialidad */
+.especialidad {
+    background-color: rgba(255, 255, 255, 0.55);  /* Blanco semitransparente */
+    border-left: 4px solid #c1694f;               /* Línea de acento terracota */
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.especialidad:last-child {
+    margin-bottom: 0;
+}
+
+/* Nombre de la especialidad: negrita y color destacado */
+.especialidad-nombre {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.15rem;
+    font-weight: 700;            /* Negrita para destacar el nombre */
+    color: #5c2d1e;              /* Marrón oscuro para el nombre */
+    margin-bottom: 0.4rem;
+}
+
+/* Descripción: peso normal y color más suave */
+.especialidad-desc {
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #5a4840;
+}
+
+
+/* ==========================================================
+   6. FOOTER — Fondo oscuro y texto claro
+   ========================================================== */
+
+.footer {
+    background-color: #1e1410;  /* Marrón muy oscuro, casi negro */
+    color: #c8a882;             /* Crema dorado: buen contraste con el fondo oscuro */
+    font-size: 0.85rem;
+    font-weight: 300;
+    line-height: 2;
+    text-align: center;
+    padding: 2.5rem 2rem;
+}
+
+/* Nombre de la cafetería en el footer: fuente de títulos */
+.footer-nombre {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #f0c8a8;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+/* Copyright: tono más apagado para que sea secundario */
+.footer-copyright {
+    margin-top: 1rem;
+    color: #6b5a4e;
+    font-size: 0.8rem;
+}
