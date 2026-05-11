@@ -44,6 +44,7 @@ body {
    no necesitan el header o footer */
 main {
     flex: 1;
+    margin-bottom: 80px;
 }
 
 /* Estilos base para todos los títulos:
