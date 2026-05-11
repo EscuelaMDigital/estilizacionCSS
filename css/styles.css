@@ -107,6 +107,7 @@ a {
 .nav {
     background-color: #3a2e28;  /* Marrón muy oscuro, casi negro */
     padding: 0 2rem;
+    text-align: center;
 
     /* Los enlaces del nav son elementos inline por defecto.
        Sin Flexbox ni Grid, los dejamos fluir en línea
